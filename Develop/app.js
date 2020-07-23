@@ -172,6 +172,23 @@ function addHtml(member) {
   });
 }
 
+function finishHtml() {
+  const html = ` </div>
+    </div>
+    
+</body>
+</html>`;
+
+  fs.appendFile("./output/team.html", html, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+  console.log("end");
+}
+
+initApp();
+
 // HINT: each employee type (manager, engineer, or intern) has slightly different
 // information; write your code to ask different questions via inquirer depending on
 // employee type.
