@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(__dirname, "Team");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./Develop/lib/htmlRenderer");
@@ -97,14 +97,15 @@ function startHtml() {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <title>Team Profile</title>
+        <script src="https://kit.fontawesome.com/c863466630.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark mb-5">
-            <span class="navbar-brand mb-0 h1 w-100 text-center">Team Profile</span>
+            <span class="navbar-brand mb-0 h1 w-100 text-center">The Team</span>
         </nav>
         <div class="container">
             <div class="row">`;
-  fs.writeFile("./team/team.html", html, function (err) {
+  fs.writeFile("./Team/team.html", html, function (err) {
     if (err) {
       console.log(err);
     }
@@ -129,7 +130,7 @@ function addHtml(member) {
       const gitHub = member.getGithub();
       data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Engineer</h5>
+            <h5 class="card-header"><i class="far fa-address-card"></i></i>${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
@@ -141,7 +142,7 @@ function addHtml(member) {
       const school = member.getSchool();
       data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Intern</h5>
+            <h5 class="card-header"><i class="far fa-address-card"></i>${name}<br /><br />Intern</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
@@ -153,7 +154,7 @@ function addHtml(member) {
       const officePhone = member.getOfficeNumber();
       data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Manager</h5>
+            <h5 class="card-header"><i class="far fa-address-card"></i>${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
@@ -163,7 +164,7 @@ function addHtml(member) {
         </div>`;
     }
     console.log("adding team member");
-    fs.appendFile("./team/team.html", data, function (err) {
+    fs.appendFile("./Team/team.html", data, function (err) {
       if (err) {
         return reject(err);
       }
@@ -179,7 +180,7 @@ function finishHtml() {
 </body>
 </html>`;
 
-  fs.appendFile("./team/team.html", html, function (err) {
+  fs.appendFile("./Team/team.html", html, function (err) {
     if (err) {
       console.log(err);
     }
