@@ -21,6 +21,8 @@ User will be asked if they want to add another member. Choosing "Yes" will have 
 
 # HTML Snapshot
 
+![TEam Snapshot](https://user-images.githubusercontent.com/64857091/88412214-36275000-cda7-11ea-8bfd-dd63555a3140.jpg)
+
 # Used Techinques
 
 Uses FS to write HTML in a Javascript file.
